@@ -85,7 +85,7 @@ This project predicts whether a student will **pass or fail** based on demograph
 - **Functionality:**  
   - Accepts student data input **manually or via file upload**  
   - Displays **pass/fail prediction, confidence scores, and LIME explanations**  
-- **Live Link:** [Paste your Streamlit URL here]  
+- **Live Link:** https://student-performance-prediction-and-early-intervention-grxr2ecs.streamlit.app/
 
 ---
 
