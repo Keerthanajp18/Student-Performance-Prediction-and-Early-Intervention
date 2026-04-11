@@ -1,12 +1,26 @@
-import streamlit as st
+import streamlit as st 
 import pandas as pd
 import joblib
+import numpy as np
+from lime.lime_tabular import LimeTabularExplainer
 
 # -----------------------------
 # Load model and feature columns
 # -----------------------------
 model = joblib.load("student_model.pkl")
 feature_columns = joblib.load("feature_columns.pkl")
+
+# -----------------------------
+# Create LIME explainer (SAFE METHOD)
+# -----------------------------
+training_data = np.random.rand(100, len(feature_columns))
+
+explainer = LimeTabularExplainer(
+    training_data,
+    feature_names=feature_columns,
+    class_names=["Fail", "Pass"],
+    mode="classification"
+)
 
 st.title("🎓 Student Performance Prediction")
 
@@ -49,7 +63,7 @@ if st.button("Predict"):
     input_df = pd.DataFrame([input_dict])
 
     # -----------------------------
-    # Handle categorical variables using get_dummies
+    # Handle categorical variables
     # -----------------------------
     cat_data = pd.DataFrame({
         'sex':[sex],
@@ -67,7 +81,7 @@ if st.button("Predict"):
     input_df = pd.concat([input_df, cat_encoded], axis=1)
 
     # -----------------------------
-    # Fix: Align columns with training
+    # Align columns with training
     # -----------------------------
     input_df = input_df.reindex(columns=feature_columns, fill_value=0)
 
@@ -93,6 +107,19 @@ if st.button("Predict"):
         "Probability": probability
     })
     st.bar_chart(prob_df.set_index("Result"))
+
+    # -----------------------------
+    # LIME Explanation (NEW 🔥)
+    # -----------------------------
+    st.write("### Why this prediction? (LIME Explanation)")
+
+    exp = explainer.explain_instance(
+        input_df.values[0],
+        model.predict_proba,
+        num_features=5
+    )
+
+    st.pyplot(exp.as_pyplot_figure())
 
 # -----------------------------
 st.write("---")
