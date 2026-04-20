@@ -1,4 +1,4 @@
-import streamlit as st 
+import  streamlit as st 
 import pandas as pd
 import joblib
 import numpy as np
@@ -109,7 +109,7 @@ if st.button("Predict"):
     st.bar_chart(prob_df.set_index("Result"))
 
     # -----------------------------
-    # LIME Explanation (NEW 🔥)
+    
     # -----------------------------
     st.write("### Why this prediction? (LIME Explanation)")
 
