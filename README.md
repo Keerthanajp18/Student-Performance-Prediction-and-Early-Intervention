@@ -1,7 +1,3 @@
-<img width="1336" height="812" alt="output2" src="https://github.com/user-attachments/assets/2213c5d9-1f4d-485c-bfe2-23dcec8cb61b" />
-<img width="1421" height="743" alt="output1" src="https://github.com/user-attachments/assets/488b7837-a2fb-4f12-a5c8-1e4d79f40a0a" />
-<img width="1428" height="854" alt="input2" src="https://github.com/user-attachments/assets/637eb7a0-1a78-481d-a274-4ecb626a7678" />
-<img width="1389" height="795" alt="input1" src="https://github.com/user-attachments/assets/5a251a5e-adbf-4867-8d40-13b5e3f85f98" />
 # Student-Performance-Prediction-and-Early-Intervention
 
 ## Team Members
@@ -92,7 +88,11 @@ This project predicts whether a student will **pass or fail** based on demograph
 - **Live Link:** https://student-performance-prediction-and-early-intervention-grxr2ecs.streamlit.app/
 
 ---
-
+SCREENSHOTS OF DEPLOYED APPLICATION 
+<img width="1336" height="812" alt="output2" src="https://github.com/user-attachments/assets/2213c5d9-1f4d-485c-bfe2-23dcec8cb61b" />
+<img width="1421" height="743" alt="output1" src="https://github.com/user-attachments/assets/488b7837-a2fb-4f12-a5c8-1e4d79f40a0a" />
+<img width="1428" height="854" alt="input2" src="https://github.com/user-attachments/assets/637eb7a0-1a78-481d-a274-4ecb626a7678" />
+<img width="1389" height="795" alt="input1" src="https://github.com/user-attachments/assets/5a251a5e-adbf-4867-8d40-13b5e3f85f98" />
 ## Installation
 
 1. **Clone the repository:**  
