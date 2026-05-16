@@ -9,6 +9,7 @@ from lime.lime_tabular import LimeTabularExplainer
 # -----------------------------
 model = joblib.load("student_model.pkl")
 feature_columns = joblib.load("feature_columns.pkl")
+scaler = joblib.load("scaler.pkl")
 
 # -----------------------------
 # Create LIME explainer (SAFE METHOD)
@@ -87,9 +88,10 @@ if st.button("Predict"):
 
     # -----------------------------
     # Prediction
-    # -----------------------------
-    prediction = model.predict(input_df)[0]
-    probability = model.predict_proba(input_df)[0]
+    input_scaled = scaler.transform(input_df)
+
+    prediction = model.predict(input_scaled)[0]
+    probability = model.predict_proba(input_scaled)[0]
 
     # -----------------------------
     # Output
